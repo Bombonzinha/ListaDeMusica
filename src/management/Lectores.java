@@ -11,6 +11,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import entities.Cancion;
 import entities.ListaCanciones;
 
 public class Lectores {
@@ -37,7 +38,7 @@ public class Lectores {
 				nuevaLinea = datos[0] + "|"+ datos[1] + "|" + datos[2] + "\n";
 				if (noExiste(listaSpotify, nuevaLinea)) {
 					listaSpotifyBuilder.append(nuevaLinea); // los agregos a la lista
-					listaCanciones.agregarCanción(datos[0], datos[1], datos[2], false);
+					listaCanciones.agregarCanción(datos[0], datos[1], datos[2], false, 0);
 				}
 			}
 			// Cierra el archivo después de leerlo
@@ -73,7 +74,10 @@ public class Lectores {
 				JSONObject jsonObject = jsonArray.getJSONObject(i);
 				String title = jsonObject.getString("title");
 				String uploader = jsonObject.getString("uploader");
-				listaCanciones.agregarCanción(title, uploader, null, false);
+				if (uploader.endsWith(" - Topic")) {
+				    uploader = uploader.substring(0, uploader.length() - 7); // Elimina los últimos 7 caracteres
+				}
+				listaCanciones.agregarCanción(title, uploader, null, false, 0);
 			}
 
 		} catch (Exception e) {
@@ -124,6 +128,38 @@ public class Lectores {
 	}
 
 	public static void main(String[] args) {
-//		System.out.println(lector(spotify));
+		ListaCanciones listaCanciones = new ListaCanciones();
+		Scanner scanner = new Scanner(System.in);
+		lectorJson(listaCanciones);
+		for (int i = 0; i < listaCanciones.getListaCanciones().size(); i++) {
+			Cancion cancion = listaCanciones.getListaCanciones().get(i);
+			System.out.println(cancion);
+			System.out.println("editar?(a para editar, q para saltar, cualquier otra tecla para continuar)\n");
+			String entrada = scanner.nextLine();
+			if ("a".equals(entrada)) {
+				 System.out.println("Nombre:");
+		            String nombre = scanner.nextLine();
+		            if (!nombre.isEmpty()) { // Verifica si la entrada no está vacía
+		                cancion.setTitulo(nombre);
+		            }
+		            System.out.println("Artista:");
+		            String artista = scanner.nextLine();
+		            if (!artista.isEmpty()) { // Verifica si la entrada no está vacía
+		                cancion.setArtista(artista);
+		            }
+		            System.out.println("Álbum:");
+		            String album = scanner.nextLine();
+		            if (!album.isEmpty()) { // Verifica si la entrada no está vacía
+		                cancion.setAlbum(album);
+		            }
+			} else if("q".equals(entrada)){
+				//Esto saltea
+			} else {
+				i--;
+				System.out.println("Por favor escriba a o q");
+			}
+			System.out.println(cancion);
+		}
+		scanner.close();
 	}
 }

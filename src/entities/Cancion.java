@@ -6,13 +6,15 @@ public class Cancion {
 	private String artista;
 	private String album;
 	private boolean revisado;
+	private int rate;
 	// Constructor
-    public Cancion(int id, String titulo, String artista, String album, boolean revisado) {
+    public Cancion(int id, String titulo, String artista, String album, boolean revisado, int rate) {
         this.id = id;
     	this.titulo = titulo;
         this.artista = artista;
         this.album = album;
         this.revisado = revisado;
+        this.rate=rate;
     }
 
     // Getters
@@ -56,10 +58,18 @@ public class Cancion {
 		this.album = album;
 	}
 
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+
 	@Override
 	public String toString() {
 		return "Cancion [id=" + id + ", titulo=" + titulo + ", artista=" + artista + ", album=" + album + ", revisado="
-				+ revisado + "]\n";
+				+ revisado + ", rate="+ rate + "]\n";
 	}
     
     
