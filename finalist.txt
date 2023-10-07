@@ -6131,7 +6131,7 @@ Revisado: false
 Rate: 0
 
 Título: You're Gonna Go Far
-Artista:  Kid
+Artista: Kid
 Álbum: The Offspring
 Revisado: false
 Rate: 0
@@ -6203,7 +6203,7 @@ Revisado: false
 Rate: 0
 
 Título: You're My Heart
-Artista:  You're My Soul
+Artista: You're My Soul
 Álbum: Modern Talking
 Revisado: false
 Rate: 0
@@ -6617,7 +6617,7 @@ Revisado: false
 Rate: 0
 
 Título: The Island
-Artista:  Pt. II (Dusk)
+Artista: Pt. II (Dusk)
 Álbum: Pendulum
 Revisado: false
 Rate: 0
@@ -7037,7 +7037,7 @@ Revisado: false
 Rate: 0
 
 Título: Watch Out for This (Bumaye) [feat. Busy Signal
-Artista:  The Flexican & FS Green]
+Artista: The Flexican & FS Green]
 Álbum: Major Lazer
 Revisado: false
 Rate: 0
@@ -7151,8 +7151,8 @@ Revisado: false
 Rate: 0
 
 Título: (Shake
-Artista:  Shake
-Álbum:  Shake) Shake Your Booty
+Artista: Shake
+Álbum: Shake) Shake Your Booty
 Revisado: false
 Rate: 0
 
@@ -7481,7 +7481,7 @@ Revisado: false
 Rate: 0
 
 Título: Kernkraft 400 - DJ Gius Mix
-Artista:  Radio Edit
+Artista: Radio Edit
 Álbum: Zombie Nation
 Revisado: false
 Rate: 0
@@ -7542,7 +7542,7 @@ Rate: 0
 
 Título: Boogie Wonderland
 Artista: Earth
-Álbum:  Wind & Fire
+Álbum: Wind & Fire
 Revisado: false
 Rate: 0
 
@@ -8039,8 +8039,8 @@ Revisado: false
 Rate: 0
 
 Título: Head
-Artista:  First
-Álbum:  Down
+Artista: First
+Álbum: Down
 Revisado: false
 Rate: 0
 
@@ -8064,7 +8064,7 @@ Rate: 0
 
 Título: Jump Around
 Artista: Fear
-Álbum:  and Loathing in Las Vegas
+Álbum: and Loathing in Las Vegas
 Revisado: false
 Rate: 0
 
@@ -8297,7 +8297,7 @@ Revisado: false
 Rate: 0
 
 Título: Love the past
-Artista:  Play the future
+Artista: Play the future
 Álbum: CTS
 Revisado: false
 Rate: 0
@@ -8501,7 +8501,7 @@ Revisado: false
 Rate: 0
 
 Título: Father
-Artista:  Father
+Artista: Father
 Álbum: Jay Prince
 Revisado: false
 Rate: 0
@@ -8741,8 +8741,8 @@ Revisado: false
 Rate: 0
 
 Título: Eat
-Artista:  Sleep
-Álbum:  Wake (Nothing But You)
+Artista: Sleep
+Álbum: Wake (Nothing But You)
 Revisado: false
 Rate: 0
 
@@ -9905,7 +9905,7 @@ Revisado: false
 Rate: 0
 
 Título: AAA FEAT TREYY G
-Artista: AVIVA 
+Artista: AVIVA
 Álbum: https://open.spotify.com/artist/2FA25oliKamp2r2viPuXA0?si=gvrcyarkSC6po8QDh2FqDw
 Revisado: false
 Rate: 0
@@ -10805,7 +10805,7 @@ Revisado: false
 Rate: 0
 
 Título: Boomerang
-Artista:  Brooks & GRX
+Artista: Brooks & GRX
 Álbum: Boomerang
 Revisado: false
 Rate: 0
@@ -11069,7 +11069,7 @@ Revisado: false
 Rate: 0
 
 Título: Cross Your Heart (feat. Gabrielle)
-Artista: Cocaine & Caviar 
+Artista: Cocaine & Caviar
 Álbum: Cross Your Heart - Single
 Revisado: false
 Rate: 0
@@ -11284,9 +11284,9 @@ Artista: Draft Punk
 Revisado: false
 Rate: 0
 
-Título: Forever 
+Título: Forever
 Artista: Daiwik
-Álbum: Forever 
+Álbum: Forever
 Revisado: false
 Rate: 0
 
@@ -11466,7 +11466,7 @@ Rate: 0
 
 Título: Dear Life (Original Mix)
 Artista: Dannic feat. Bright Lights
-Álbum: Dear Life 
+Álbum: Dear Life
 Revisado: false
 Rate: 0
 
@@ -11489,7 +11489,7 @@ Revisado: false
 Rate: 0
 
 Título: Rock This Place (Original Mix)
-Artista: Declain, Pantac & NANDEX 
+Artista: Declain, Pantac & NANDEX
 Álbum: a9rjg0r9gj0e9jgr
 Revisado: false
 Rate: 0
@@ -11824,7 +11824,7 @@ Artista: DVBBS & Jay Hardway
 Revisado: false
 Rate: 0
 
-Título: Never Leave (Extended Mix) 
+Título: Never Leave (Extended Mix)
 Artista: DVBBS
 Álbum: 
 Revisado: false
@@ -12175,7 +12175,6 @@ Rate: 0
 Título: Sir Duke (Festival Mix Edit)
 Artista: Firebeatz & Fafaq
 Álbum: Speeeedy EDM Blog - главный источник электронной музыки вконтакте!
-vk.com/speeeedy
 Revisado: false
 Rate: 0
 
@@ -12523,7 +12522,7 @@ Rate: 0
 
 Título: Don't Stop The Madness (Original Mix)
 Artista: Hardwell & W&W feat. Fatman Scoop
-Álbum: Don't Stop The Madness 
+Álbum: Don't Stop The Madness
 Revisado: false
 Rate: 0
 
@@ -12601,7 +12600,7 @@ Rate: 0
 
 Título: Vertigo
 Artista: Higher Flights & Zackllaxx
-Álbum:  sdg78wyehv893utv3333
+Álbum: sdg78wyehv893utv3333
 Revisado: false
 Rate: 0
 
@@ -12643,7 +12642,7 @@ Rate: 0
 
 Título: Rhythm Is Love (Extended Mix)
 Artista: Holl & Rush
-Álbum: ohg24th25thmfnvdfmv d 
+Álbum: ohg24th25thmfnvdfmv d
 Revisado: false
 Rate: 0
 
@@ -12666,7 +12665,7 @@ Revisado: false
 Rate: 0
 
 Título: A Fairy Tale (Original Mix)
-Artista: Howmavel 
+Artista: Howmavel
 Álbum: A Fairy Tale
 Revisado: false
 Rate: 0
@@ -13182,7 +13181,7 @@ Revisado: false
 Rate: 0
 
 Título: Raven (Original Mix)
-Artista: John Dahlback 
+Artista: John Dahlback
 Álbum: vk.com/speeeedy
 Revisado: false
 Rate: 0
@@ -13244,7 +13243,6 @@ Rate: 0
 Título: Start Again (Tom Swoon Extended Edit)
 Artista: Justin Oh
 Álbum: w4y425y34y источник электронной музыки вконтакте!
-vk.com/speeeedy
 Revisado: false
 Rate: 0
 
@@ -13418,7 +13416,7 @@ Rate: 0
 
 Título: Cambodia (Love Troups 2013 Mix)
 Artista: Kim Wilde
-Álbum: apirhga09rhgae09rhga 
+Álbum: apirhga09rhgae09rhga
 Revisado: false
 Rate: 0
 
@@ -13519,7 +13517,7 @@ Revisado: false
 Rate: 0
 
 Título: Zodiac (Original Mix)
-Artista: Kroshwell 
+Artista: Kroshwell
 Álbum: Single
 Revisado: false
 Rate: 0
@@ -13975,7 +13973,7 @@ Revisado: false
 Rate: 0
 
 Título: Too Far Gone (Feat. Matthew Santos)
-Artista: MAKJ 
+Artista: MAKJ
 Álbum: asdf2017/sdfasdf
 Revisado: false
 Rate: 0
@@ -14178,8 +14176,8 @@ Artista: Matroda
 Revisado: false
 Rate: 0
 
-Título: Epiphany (feat. Miss Tantrum)  
-Artista: Matt Chavez & DDRey 
+Título: Epiphany (feat. Miss Tantrum)
+Artista: Matt Chavez & DDRey
 Álbum: Epiphany - Single
 Revisado: false
 Rate: 0
@@ -14358,7 +14356,7 @@ Artista: Mike Hawkins & 7 Skies
 Revisado: false
 Rate: 0
 
-Título: Can You Feel It 
+Título: Can You Feel It
 Artista: Mike Prob
 Álbum: iasdjfiasdjfasdnfaksdfnkasdfwwww
 Revisado: false
@@ -14442,7 +14440,7 @@ Artista: Mountkid
 Revisado: false
 Rate: 0
 
-Título: Move you 
+Título: Move you
 Artista: The Urgency
 Álbum: Move It
 Revisado: false
@@ -14700,7 +14698,7 @@ Artista: Olly James
 Revisado: false
 Rate: 0
 
-Título: The Orkestra (Original Mix) 
+Título: The Orkestra (Original Mix)
 Artista: Olly James
 Álbum: thrkstrllyjms
 Revisado: false
@@ -14907,7 +14905,6 @@ Rate: 0
 Título: Cosmic Dark (Extended Mix)
 Artista: Pitchback
 Álbum: Saaaapeeeedy EDM Blog - главный источник электронной музыки вконтакте!
-vk.com/speeeedy
 Revisado: false
 Rate: 0
 
@@ -15248,7 +15245,7 @@ Revisado: false
 Rate: 0
 
 Título: Unleashed (Original Mix)
-Artista: Rayo 
+Artista: Rayo
 Álbum: Unleashed - Single
 Revisado: false
 Rate: 0
@@ -15308,7 +15305,7 @@ Revisado: false
 Rate: 0
 
 Título: Universe (Original Mix)
-Artista: REGGIO 
+Artista: REGGIO
 Álbum: -mcvmcmvncvncv
 Revisado: false
 Rate: 0
@@ -16078,7 +16075,6 @@ Rate: 0
 Título: Helix (Extended Mix)
 Artista: Sick Individuals X Holl & Rush
 Álbum: 3946jhy736yb63вный источник электронной музыки вконтакте!
-vk.com/speeeedy
 Revisado: false
 Rate: 0
 
@@ -16114,7 +16110,7 @@ Rate: 0
 
 Título: Darkness (Original Mix)
 Artista: Skilyn
-Álbum: w4t+6g 5wrt 
+Álbum: w4t+6g 5wrt
 Revisado: false
 Rate: 0
 
@@ -16148,7 +16144,7 @@ Artista: Shihad
 Revisado: false
 Rate: 0
 
-Título: Fire (Original Mix) 
+Título: Fire (Original Mix)
 Artista: Slice N Dice feat. Katt Niall
 Álbum: 
 Revisado: false
@@ -16431,7 +16427,7 @@ Revisado: false
 Rate: 0
 
 Título: Tell Me Why (Club Mix)
-Artista: Supermode 
+Artista: Supermode
 Álbum: www.mp3arena.ru
 Revisado: false
 Rate: 0
@@ -17025,7 +17021,7 @@ Revisado: false
 Rate: 0
 
 Título: Breakdown (feat. Chris Linton)
-Artista: Tribe Dive & Rivo 
+Artista: Tribe Dive & Rivo
 Álbum: Breakdown - Single
 Revisado: false
 Rate: 0
@@ -17081,7 +17077,6 @@ Rate: 0
 Título: About U (Original Mix)
 Artista: TWIIG
 Álbum: Speeeedy EDM Blog - главный источник электронной музыки вконтакте!
-vk.com/speeeedy
 Revisado: false
 Rate: 0
 
@@ -17238,7 +17233,6 @@ Rate: 0
 Título: Zen (Extended Mix)
 Artista: Vice Versa
 Álbum: Speeeedy EDM Blog - главный источник электронной музыки вконтакте!
-vk.com/speeeedy
 Revisado: false
 Rate: 0
 
@@ -17303,7 +17297,7 @@ Revisado: false
 Rate: 0
 
 Título: Levity (Original Mix)
-Artista: Vimter 
+Artista: Vimter
 Álbum: Levity
 Revisado: false
 Rate: 0
@@ -17689,7 +17683,6 @@ Rate: 0
 Título: Sunlight (Extended Mix)
 Artista: Zatox
 Álbum: Speeeedy EDM Blog jbjbjbjчник электронной музыки вконтакте!
-vk.com/speeeedy
 Revisado: false
 Rate: 0
 
