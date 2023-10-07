@@ -7,7 +7,7 @@ Rate: 0
 Título: Before You Go
 Artista: WYKO X Maski & Banga
 Álbum: null
-Revisado: false
+Revisado: true
 Rate: 0
 
 Título: Get Mine (feat. Max Landry)

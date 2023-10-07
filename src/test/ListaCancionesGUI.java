@@ -22,12 +22,11 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
-
-import java.io.FileOutputStream;
+import java.io.*;
 
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 
 public class ListaCancionesGUI extends JFrame {
 	private DefaultTableModel tableModel;
@@ -69,8 +68,6 @@ public class ListaCancionesGUI extends JFrame {
 		table = new JTable(tableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
 		add(scrollPane, BorderLayout.CENTER);
-		
-		
 
 		// Configurar la columna "REVISADO" para usar la celda personalizada
 		table.getColumnModel().getColumn(4).setCellRenderer(new CheckBoxCellRenderer());
@@ -178,8 +175,9 @@ public class ListaCancionesGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Test.guardar(listaCanciones);
 				// Llamar al método para guardar la lista en un archivo de Excel
-		        guardarListaComoExcel("ListaCanciones.xlsx"); // Puedes cambiar el nombre del archivo según tus preferencias
-		    
+				guardarListaComoExcel("ListaCanciones.xlsx"); // Puedes cambiar el nombre del archivo según tus
+																// preferencias
+
 			}
 		});
 
@@ -216,45 +214,73 @@ public class ListaCancionesGUI extends JFrame {
 			break;
 		}
 	}
-	
+
 	private void guardarListaComoExcel(String nombreArchivo) {
-	    try {
-	        Workbook workbook = new XSSFWorkbook(); // Crear un nuevo libro de Excel
-	        Sheet sheet = workbook.createSheet("Lista de Canciones"); // Crear una hoja de trabajo
+		try {
+			FileInputStream fileInputStream = null;
+			XSSFWorkbook workbook = null;
+			XSSFSheet sheet = null;
 
-	        // Agregar encabezados de columna
-	        Row headerRow = sheet.createRow(0);
-	        String[] columnNames = { "ID", "Título", "Artista", "Álbum", "Revisado", "Rate" };
-	        for (int i = 0; i < columnNames.length; i++) {
-	            Cell cell = headerRow.createCell(i);
-	            cell.setCellValue(columnNames[i]);
-	        }
+			// Verificar si el archivo existe
+			File archivoExistente = new File(nombreArchivo);
+			if (archivoExistente.exists()) {
+				// Si el archivo existe, cargarlo
+				fileInputStream = new FileInputStream(nombreArchivo);
+				workbook = new XSSFWorkbook(fileInputStream);
+			} else {
+				// Si el archivo no existe, crear uno nuevo
+				workbook = new XSSFWorkbook();
+			}
 
-	        // Agregar datos de la lista a las filas
-	        List<Cancion> lista = listaCanciones.getListaCanciones();
-	        int rowNum = 1; // Comenzar desde la segunda fila
-	        for (Cancion cancion : lista) {
-	            Row row = sheet.createRow(rowNum++);
-	            row.createCell(0).setCellValue(cancion.getId());
-	            row.createCell(1).setCellValue(cancion.getTitulo());
-	            row.createCell(2).setCellValue(cancion.getArtista());
-	            row.createCell(3).setCellValue(cancion.getAlbum());
-	            row.createCell(4).setCellValue(cancion.isRevisado());
-	            row.createCell(5).setCellValue(cancion.getRate());
-	        }
+			// Obtener o crear la hoja de trabajo
+			if (workbook.getNumberOfSheets() == 0) {
+				sheet = workbook.createSheet("Lista de Canciones");
+			} else {
+				sheet = workbook.getSheetAt(0);
+			}
 
-	        // Guardar el libro de Excel en un archivo
-	        FileOutputStream outputStream = new FileOutputStream(nombreArchivo);
-	        workbook.write(outputStream);
-	        outputStream.close();
+			// Elimina todas las filas existentes en la hoja de trabajo
+			int rowCount = sheet.getLastRowNum();
+			for (int i = rowCount; i >= 0; i--) {
+				sheet.removeRow(sheet.getRow(i));
+			}
+			
+			// Agregar encabezados de columna si la hoja está vacía
+			if (sheet.getPhysicalNumberOfRows() == 0) {
+				Row headerRow = sheet.createRow(0);
+				String[] columnNames = { "ID", "Título", "Artista", "Álbum", "Revisado", "Rate" };
+				for (int i = 0; i < columnNames.length; i++) {
+					Cell cell = headerRow.createCell(i);
+					cell.setCellValue(columnNames[i]);
+				}
+			}
 
-	        JOptionPane.showMessageDialog(this, "La lista se ha guardado en Excel correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        JOptionPane.showMessageDialog(this, "Ocurrió un error al guardar la lista en Excel.", "Error", JOptionPane.ERROR_MESSAGE);
-	    }
+			// Agregar datos de la lista a las filas (a partir de la última fila)
+			List<Cancion> lista = listaCanciones.getListaCanciones();
+			int rowNum = sheet.getPhysicalNumberOfRows(); // Comenzar desde la siguiente fila vacía
+			for (Cancion cancion : lista) {
+				Row row = sheet.createRow(rowNum++);
+				row.createCell(0).setCellValue(cancion.getId());
+				row.createCell(1).setCellValue(cancion.getTitulo());
+				row.createCell(2).setCellValue(cancion.getArtista());
+				row.createCell(3).setCellValue(cancion.getAlbum());
+				row.createCell(4).setCellValue(cancion.isRevisado());
+				row.createCell(5).setCellValue(cancion.getRate());
+			}
+
+			// Guardar el libro de Excel en el archivo
+			FileOutputStream outputStream = new FileOutputStream(nombreArchivo);
+			workbook.write(outputStream);
+			outputStream.close();
+
+			JOptionPane.showMessageDialog(this, "La lista se ha guardado en Excel correctamente.", "Éxito",
+					JOptionPane.INFORMATION_MESSAGE);
+		} catch (Exception e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(this, "Ocurrió un error al guardar la lista en Excel.", "Error",
+					JOptionPane.ERROR_MESSAGE);
+		}
 	}
-
 
 	public static void main(String[] args) {
 		// Crear una instancia de ListaCanciones y agregar canciones de ejemplo
