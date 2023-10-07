@@ -23,6 +23,12 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+import java.io.FileOutputStream;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+
 public class ListaCancionesGUI extends JFrame {
 	private DefaultTableModel tableModel;
 	private JTable table;
@@ -171,6 +177,9 @@ public class ListaCancionesGUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Test.guardar(listaCanciones);
+				// Llamar al método para guardar la lista en un archivo de Excel
+		        guardarListaComoExcel("ListaCanciones.xlsx"); // Puedes cambiar el nombre del archivo según tus preferencias
+		    
 			}
 		});
 
@@ -207,6 +216,45 @@ public class ListaCancionesGUI extends JFrame {
 			break;
 		}
 	}
+	
+	private void guardarListaComoExcel(String nombreArchivo) {
+	    try {
+	        Workbook workbook = new XSSFWorkbook(); // Crear un nuevo libro de Excel
+	        Sheet sheet = workbook.createSheet("Lista de Canciones"); // Crear una hoja de trabajo
+
+	        // Agregar encabezados de columna
+	        Row headerRow = sheet.createRow(0);
+	        String[] columnNames = { "ID", "Título", "Artista", "Álbum", "Revisado", "Rate" };
+	        for (int i = 0; i < columnNames.length; i++) {
+	            Cell cell = headerRow.createCell(i);
+	            cell.setCellValue(columnNames[i]);
+	        }
+
+	        // Agregar datos de la lista a las filas
+	        List<Cancion> lista = listaCanciones.getListaCanciones();
+	        int rowNum = 1; // Comenzar desde la segunda fila
+	        for (Cancion cancion : lista) {
+	            Row row = sheet.createRow(rowNum++);
+	            row.createCell(0).setCellValue(cancion.getId());
+	            row.createCell(1).setCellValue(cancion.getTitulo());
+	            row.createCell(2).setCellValue(cancion.getArtista());
+	            row.createCell(3).setCellValue(cancion.getAlbum());
+	            row.createCell(4).setCellValue(cancion.isRevisado());
+	            row.createCell(5).setCellValue(cancion.getRate());
+	        }
+
+	        // Guardar el libro de Excel en un archivo
+	        FileOutputStream outputStream = new FileOutputStream(nombreArchivo);
+	        workbook.write(outputStream);
+	        outputStream.close();
+
+	        JOptionPane.showMessageDialog(this, "La lista se ha guardado en Excel correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        JOptionPane.showMessageDialog(this, "Ocurrió un error al guardar la lista en Excel.", "Error", JOptionPane.ERROR_MESSAGE);
+	    }
+	}
+
 
 	public static void main(String[] args) {
 		// Crear una instancia de ListaCanciones y agregar canciones de ejemplo
