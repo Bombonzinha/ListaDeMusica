@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import entities.Cancion;
 import entities.ListaCanciones;
@@ -11,6 +12,9 @@ import entities.ListaCanciones;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.event.MouseAdapter;
@@ -23,6 +27,8 @@ public class ListaCancionesGUI extends JFrame {
 	private DefaultTableModel tableModel;
 	private JTable table;
 	private ListaCanciones listaCanciones;
+	private double[] columnaProporciones = {0.03, 0.45, 0.25, 0.21, 0.03, 0.02}; // Proporciones de ancho de las columnas
+
 
 	public ListaCancionesGUI(ListaCanciones listaCanciones) {
 		this.listaCanciones = listaCanciones;
@@ -32,9 +38,18 @@ public class ListaCancionesGUI extends JFrame {
 		setSize(800, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		// Crear un modelo de tabla
-		String[] columnNames = { "ID", "Título", "Artista", "Álbum", "Revisado", "Rate" };
-		tableModel = new DefaultTableModel(columnNames, 0);
+		 // Crear un modelo de tabla personalizado
+        String[] columnNames = {"ID", "Título", "Artista", "Álbum", "Revisado", "Rate"};
+        tableModel = new DefaultTableModel(columnNames, 0) {
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                // Define la clase de columna para permitir valores booleanos en la columna "Revisado"
+                if (columnIndex == 4) {
+                    return Boolean.class;
+                }
+                return super.getColumnClass(columnIndex);
+            }
+        };
 
 		// Llenar la tabla con datos
 		for (Cancion cancion : listaCanciones.getListaCanciones()) {
@@ -48,6 +63,38 @@ public class ListaCancionesGUI extends JFrame {
 		JScrollPane scrollPane = new JScrollPane(table);
 		add(scrollPane, BorderLayout.CENTER);
 
+		// Configurar la columna "REVISADO" para usar la celda personalizada
+		table.getColumnModel().getColumn(4).setCellRenderer(new CheckBoxCellRenderer());
+		
+		 // Crear un TableCellRenderer personalizado para alinear los valores de las columnas a la derecha
+        DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
+        rightRenderer.setHorizontalAlignment(JLabel.RIGHT);
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+
+        // Aplicar el TableCellRenderer personalizado a las columnas deseadas
+        table.getColumnModel().getColumn(0).setCellRenderer(rightRenderer); // Alinea la columna 0 (ID)
+        table.getColumnModel().getColumn(1).setCellRenderer(rightRenderer); // Alinea la columna 4 (Revisado)
+        table.getColumnModel().getColumn(2).setCellRenderer(rightRenderer); // Alinea la columna 4 (Revisado)
+        table.getColumnModel().getColumn(3).setCellRenderer(rightRenderer); // Alinea la columna 4 (Revisado)
+        table.getColumnModel().getColumn(5).setCellRenderer(centerRenderer); // Alinea la columna 5 (Rate)
+    
+		
+		// Agregar un ComponentListener para ajustar el ancho de las columnas cuando cambia el tamaño de la ventana
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                // Ajustar el ancho de las columnas aquí en función del tamaño de la ventana
+                int totalWidth = getWidth();
+                int columnCount = table.getColumnModel().getColumnCount();
+                for (int i = 0; i < columnCount; i++) {
+                    int preferredWidth = (int) (totalWidth * columnaProporciones[i]);
+                    table.getColumnModel().getColumn(i).setPreferredWidth(preferredWidth);
+                }
+            }
+        });
+		
+		
 		// Crear un TableRowSorter y asignarlo a la tabla
 		TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(tableModel);
 		table.setRowSorter(sorter);
